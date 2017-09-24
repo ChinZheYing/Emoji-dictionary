@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var tableview: UITableView!
     
-    var emojis = ["😎","💩","😀","👠"," 🐹","🐬"]
+    var emojis = ["😎","💩","😀","👠","🐹","🐬"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +34,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false) //Used to choose whether to put shadow on the emoji that you've just selected when you press back. True to disable shadow. False to enable shadow
         let emoji = emojis[indexPath.row ]
         performSegue(withIdentifier: "moveSegue", sender: emoji)
     }
