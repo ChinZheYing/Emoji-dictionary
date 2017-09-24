@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var tableview: UITableView!
     
-    var emojis = ["😎","😨","💩","😀","👠"," 🐹","🐬"]
+    var emojis = ["😎","💩","😀","👠"," 🐹","🐬"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+         let defVC = segue.destination as! DefinitionViewController
+        defVC.emoji = sender as! String
     }
     
     

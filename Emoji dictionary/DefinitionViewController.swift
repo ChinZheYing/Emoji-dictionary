@@ -9,11 +9,17 @@
 import UIKit
 
 class DefinitionViewController: UIViewController {
-
+    
+    @IBOutlet weak var emojiLabel: UILabel!
+    var emoji = "No emoji"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        emojiLabel.text = emoji 
+        
     }
 
     override func didReceiveMemoryWarning() {
